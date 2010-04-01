@@ -3,9 +3,9 @@
 	<head>
 		<title>Cross browser focus management</title>
 		<link type="text/css" rel="stylesheet" href="focus_example.css"/>
+		<script type="text/javascript" src="detect_focus.js"></script>
 	</head>
 	<body>
-		<script type="text/javascript" src="detect_focus.js"></script>
 		<h1>Cross browser focus management</h1>
 		<p>Get to use the following javascript methods, cross browser</p>
 		<ul>
@@ -35,17 +35,16 @@
 		<div id="focus-element"></div>
 	</body>
 	<script type="text/javascript">
-		(function(el) {
-			var focusOutputEl = document.getElementById('focus-element');
-			var testEl = document.getElementById('test');
-	
-			document.addEventListener("focus", function(e){
-				if(console){
-					console.log(document.activeElement);
-				}
-				focusOutputEl.innerHTML = '<p><strong>Element with current focus:</strong></p> <em>&lt;' + document.activeElement.nodeName.toLowerCase() + '&gt;</em>';
-				focusOutputEl.innerHTML += '<p><strong>Test input has focus?:</strong></p> <em>' + testEl.hasFocus() + '</em>';
-			}, true);
-		})();
+        (function(el) {
+         var focusOutputEl = document.getElementById('focus-element');
+         var testEl = document.getElementById('test');
+         document.addEventListener("focus", function(e){
+             if(window.console && window.console.log){
+                 console.log(document.activeElement);
+             }
+             focusOutputEl.innerHTML = '<p><strong>Element with current focus:</strong></p> <em>&lt;' + document.activeElement.nodeName.toLowerCase() + '&gt;</em>';
+             focusOutputEl.innerHTML += '<p><strong>Test input has focus?:</strong></p> <em>' + testEl.hasFocus() + '</em>';
+         }, true);
+        })();
 	</script>
 </html>

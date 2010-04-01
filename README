@@ -1,1 +1,0 @@
-Place the script node (<script type="text/javascript" src="detect_focus.js"></script>) at the top of your browser and get access to document.activeElement and element.hasFocus().
