@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+	<head>
+		<title>Cross browser focus management</title>
+		<link type="text/css" rel="stylesheet" href="focus_example.css"/>
+	</head>
+	<body>
+		<script type="text/javascript" src="detect_focus.js"></script>
+		<h1>Cross browser focus management</h1>
+		<p>Get to use the following javascript methods, cross browser</p>
+		<ul>
+			<li><code>HTMLElement.hasFocus();</code></li>
+			<li><code>document.activeElement;</code></li>
+		</ul>
+		<p>What element has current focus? <a href="#" id="find-out">Click</a></p>
+		<form>
+			<fieldset>
+				<legend>Legend</legend>
+				<div class="row">
+					<label for="test">First Test Input</label>
+					<input value="test" name="test" id="test" />
+				</div>
+				<div class="row">
+					<label for="test2">Second Test Input</label>
+					<select id="test2">
+						<option value="1">one</option>
+						<option value="2">two</option>
+					</select>
+				</div>
+				<div class="row">
+					<button type="button">Test button</button>
+				</div>
+			</fieldset>
+		</form>
+		<div id="focus-element"></div>
+	</body>
+	<script type="text/javascript">
+		(function(el) {
+			var focusOutputEl = document.getElementById('focus-element');
+			var testEl = document.getElementById('test');
+	
+			document.addEventListener("focus", function(e){
+				if(console){
+					console.log(document.activeElement);
+				}
+				focusOutputEl.innerHTML = '<p><strong>Element with current focus:</strong></p> <em>&lt;' + document.activeElement.nodeName.toLowerCase() + '&gt;</em>';
+				focusOutputEl.innerHTML += '<p><strong>Test input has focus?:</strong></p> <em>' + testEl.hasFocus() + '</em>';
+			}, true);
+		})();
+	</script>
+</html>

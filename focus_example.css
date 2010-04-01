@@ -1,0 +1,18 @@
+body, *{
+	font-family:helvetica, arial, sans-serif;
+}
+.row{
+	padding:5px;
+}
+#focus-element{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	padding:5px 10px;
+	border-top:2px solid #ccc;
+	background:#f9f9f9;
+	height:25%;
+	font-size:90%;
+	overflow:auto;
+}
