@@ -1,3 +1,6 @@
+Cross browser focus utilities
+=============================
+
 Get access to the getters of of focus management found in the HTML5 spec <http://www.w3.org/TR/html5/editing.html#document-level-focus-apis>
 
 Get started:
