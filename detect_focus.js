@@ -19,7 +19,7 @@
         
     // Covering instance where script node is added in the head tag. Brute force baby.
     setTimeout(function(){
-        while(!document.activeElement){
+        while(undefined === document.activeElement){
             try{
                 document.activeElement = document;
                 if(window.console && window.console.log){
